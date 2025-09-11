@@ -143,4 +143,6 @@ type B2RevoluteJointDef
 type B2SpringJoint
 #external
 type B2SpringJointDef
+#external
+type B2CollisionFilter
 
