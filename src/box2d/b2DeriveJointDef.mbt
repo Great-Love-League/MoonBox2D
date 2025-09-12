@@ -99,9 +99,6 @@ pub extern "js" fn B2RevoluteJointDef::setEnableMotor(self: B2RevoluteJointDef, 
 
 // B2SpringJointDef
 
-pub extern "js" fn b2SpringJointDef(a_body1: B2Body, a_body2: B2Body, a_strength: Double) = 
-  #| (a_body1, a_body2, a_strength) => { new b2SpringJointDef(a_body1, a_body2, a_strength); }
-
 pub extern "js" fn B2SpringJointDef::setAnchorPoint1(self: B2SpringJointDef, point: B2Vec2) =
   #| (self, point) => { self.anchorPoint1.Set(point.x, point.y); }
 

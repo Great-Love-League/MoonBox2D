@@ -1,5 +1,8 @@
-pub(open) trait JointDef {
+pub trait JointDefBase {
   getBase(Self) -> B2JointDef;
+}
+
+pub(open) trait JointDef : JointDefBase {
   setBody1(Self, body: B2Body) -> Unit = _
   setBody2(Self, body: B2Body) -> Unit = _
   setCollideConnected(Self, flag: Bool) -> Unit = _
@@ -58,28 +61,51 @@ extern "js" fn B2SpringJointDef::getBase_(self : B2SpringJointDef) -> B2JointDef
   #| self => self
 
 // imply traits
-impl JointDef for B2JointDef with getBase(self){
+impl JointDefBase for B2JointDef with getBase(self){
   self
 }
 
-impl JointDef for B2DistanceJointDef with getBase(self){
+impl JointDefBase for B2DistanceJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDef for B2GearJointDef with getBase(self){
+impl JointDefBase for B2GearJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDef for B2MouseJointDef with getBase(self){
+impl JointDefBase for B2MouseJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDef for B2PrismaticJointDef with getBase(self){
+impl JointDefBase for B2PrismaticJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDef for B2PulleyJointDef with getBase(self){
+impl JointDefBase for B2PulleyJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDef for B2RevoluteJointDef with getBase(self){
+impl JointDefBase for B2RevoluteJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDef for B2SpringJointDef with getBase(self){
+impl JointDefBase for B2SpringJointDef with getBase(self){
   self.getBase_()
 }
+
+// constructor external functions
+pub extern "js" fn b2DistanceJointDef() -> B2DistanceJointDef =
+  #| new b2DistanceJointDef()
+
+pub extern "js" fn b2GearJointDef() -> B2GearJointDef =
+  #| new b2GearJointDef()
+
+pub extern "js" fn b2MouseJointDef() -> B2MouseJointDef =
+  #| new b2MouseJointDef()
+
+pub extern "js" fn b2PrismaticJointDef() -> B2PrismaticJointDef =
+  #| new b2PrismaticJointDef()
+
+pub extern "js" fn b2PulleyJointDef() -> B2PulleyJointDef =
+  #| new b2PulleyJointDef()
+
+pub extern "js" fn b2RevoluteJointDef() -> B2RevoluteJointDef =
+  #| new b2RevoluteJointDef()
+
+pub extern "js" fn b2SpringJointDef(a_body1: B2Body, a_body2: B2Body, a_strength: Double) = 
+  #| (a_body1, a_body2, a_strength) => { new b2SpringJointDef(a_body1, a_body2, a_strength); }
+
