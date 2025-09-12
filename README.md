@@ -11,3 +11,9 @@
 + 注意有些和用户无关的类也不用实现ffi 比如 b2ContactManager b2PairManager b2PairCallback，拿不准可以问AI
 
 目标：可以用ffi把demo写出来
+
+记着有些地方的内存管理的问题，就比如说 vector ，修改的时候不要直接复制整个vector，会发生不幸的事情（应为他们指向了同一个内存），使用Set
+
+## 暂时不打算完成的部分
+
++ b2GearJointDef 和 b2GearJoint
