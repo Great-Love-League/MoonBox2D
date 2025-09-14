@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2Vec2(x: Double, y: Double) -> B2Vec2 =
-  #| (x, y) => new Box2D.Common.Math.b2Vec2(x, y)
+  #| (x, y) => new b2Vec2(x, y)
 
 // functions
 pub extern "js" fn B2Vec2::setZero(self: B2Vec2) -> Unit =
@@ -12,6 +12,9 @@ pub extern "js" fn B2Vec2::setZero(self: B2Vec2) -> Unit =
 
 pub extern "js" fn B2Vec2::set(self: B2Vec2, x: Double, y: Double) -> Unit =
   #| (self, x, y) => self.Set(x, y)
+
+pub extern "js" fn B2Vec2::setV(self: B2Vec2, v: B2Vec2) -> Unit =
+  #| (self, v) => self.SetV(v)
 
 pub extern "js" fn B2Vec2::negative(self: B2Vec2) -> B2Vec2 =
   #| self => self.Negative()
@@ -33,6 +36,18 @@ pub extern "js" fn B2Vec2::mulM(self: B2Vec2, a: B2Mat22) -> Unit =
 
 pub extern "js" fn B2Vec2::mulTM(self: B2Vec2, a: B2Mat22) -> Unit =
   #| (self, a) => self.MulTM(a)
+
+pub extern "js" fn B2Vec2::crossVF(self: B2Vec2, s: Double) -> Unit =
+  #| (self, s) => self.CrossVF(s)
+
+pub extern "js" fn B2Vec2::crossFV(self: B2Vec2, s: Double) -> Unit =
+  #| (self, s) => self.CrossFV(s)
+
+pub extern "js" fn B2Vec2::minV(self: B2Vec2, b: B2Vec2) -> Unit =
+  #| (self, b) => self.MinV(b)
+
+pub extern "js" fn B2Vec2::maxV(self: B2Vec2, b: B2Vec2) -> Unit =
+  #| (self, b) => self.MaxV(b)
 
 pub extern "js" fn B2Vec2::abs(self: B2Vec2) -> Unit =
   #| self => self.Abs()

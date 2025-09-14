@@ -4,7 +4,13 @@
 
 // constructor
 pub extern "js" fn b2Mat22() -> B2Mat22 =
-  #| new Box2D.Common.Math.b2Mat22()
+  #| new b2Mat22()
+
+pub extern "js" fn b2Mat22_withAngle(angle: Double) -> B2Mat22 =
+  #| angle => new b2Mat22(angle)
+
+pub extern "js" fn b2Mat22_withVectors(c1: B2Vec2, c2: B2Vec2) -> B2Mat22 =
+  #| (c1, c2) => new b2Mat22(0, c1, c2)
 
 // functions
 pub extern "js" fn B2Mat22::set(self: B2Mat22, angle: Double) -> Unit =
