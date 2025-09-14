@@ -1,4 +1,19 @@
 {
   "import": [
+    "b2Settings",
+    "b2Vec2",
+    "b2Mat22",
+    "b2Math",
+    "b2AABB",
+    "b2Manifold",
+    "b2Distance",
+    "b2Collision",
+    "b2ShapeDef",
+    "b2CircleDef",
+    "b2BoxDef",
+    "b2PolyDef",
+    "b2Shape",
+    "b2CircleShape",
+    "b2MassData"
   ]
 }
