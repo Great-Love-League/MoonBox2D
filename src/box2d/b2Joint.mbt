@@ -1,3 +1,14 @@
+enum B2JointType {
+  UbknownJoint // 0
+  RevoluteJoint // 1
+  PrismaticJoint // 2
+  DistanceJoint // 3
+  PulleyJoint // 4
+  MouseJoint // 5
+  GearJoint // 6
+  SpringJoint // 7
+}
+
 pub trait JointBase{
   getBase(Self) -> B2Joint;
 }
@@ -10,6 +21,7 @@ pub(open) trait Joint : JointBase {
   getNext(Self) -> B2Joint = _
   getReactionForce(Self, inv_dt: Double) -> B2Vec2 = _
   getReactionTorque(Self, inv_dt: Double) -> Double = _
+  getType(Self) -> B2JointType = _
 }
 
 impl Joint with getAnchor1(self){
@@ -47,7 +59,23 @@ impl Joint with getReactionTorque(self, inv_dt: Double){
   base.getReactionTorque_(inv_dt)
 }
 
+impl Joint with getType(self){
+  let base = self.getBase();
+  match base.getType_(){
+    1 => B2JointType::RevoluteJoint
+    2 => B2JointType::PrismaticJoint
+    3 => B2JointType::DistanceJoint
+    4 => B2JointType::PulleyJoint
+    5 => B2JointType::MouseJoint
+    6 => B2JointType::GearJoint
+    7 => B2JointType::SpringJoint
+    _ => B2JointType::UbknownJoint
+  }
+}
 // base class external functions
+
+extern "js" fn B2Joint::getType_(self : B2Joint) -> Int =
+  #| self => self.GetType()
 
 extern "js" fn B2Joint::getAnchor1_(self : B2Joint) -> B2Vec2 =
   #| self => self.GetAnchor1()
@@ -140,3 +168,27 @@ pub extern "js" fn b2RevoluteJoint(def: B2RevoluteJointDef) -> B2RevoluteJoint =
 
 pub extern "js" fn b2SpringJoint(def: B2SpringJointDef) -> B2SpringJoint =
   #| (def) => new b2SpringJoint(def)
+
+
+// 转换
+
+pub extern "js" fn B2Joint::toRevoluteJoint(self : B2Joint) -> B2RevoluteJoint =
+  #| self => self instanceof b2RevoluteJoint ? self : null
+
+pub extern "js" fn B2Joint::toPrismaticJoint(self : B2Joint) -> B2PrismaticJoint =
+  #| self => self instanceof b2PrismaticJoint ? self : null
+
+pub extern "js" fn B2Joint::toDistanceJoint(self : B2Joint) -> B2DistanceJoint =
+  #| self => self instanceof b2DistanceJoint ? self : null
+
+pub extern "js" fn B2Joint::toPulleyJoint(self : B2Joint) -> B2PulleyJoint =
+  #| self => self instanceof b2PulleyJoint ? self : null
+
+pub extern "js" fn B2Joint::toMouseJoint(self : B2Joint) -> B2MouseJoint =
+  #| self => self instanceof b2MouseJoint ? self : null
+
+pub extern "js" fn B2Joint::toGearJoint(self : B2Joint) -> B2GearJoint =
+  #| self => self instanceof b2GearJoint ? self : null
+
+pub extern "js" fn B2Joint::toSpringJoint(self : B2Joint) -> B2SpringJoint =
+  #| self => self instanceof b2SpringJoint ? self : null
