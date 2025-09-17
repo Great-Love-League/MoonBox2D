@@ -58,8 +58,6 @@ type B2ShapeDef
 #external
 type B2Mat22
 #external
-type B2Math
-#external
 type B2Vec2
 
 // dynamics
@@ -67,12 +65,6 @@ type B2Vec2
 type B2Body
 #external
 type B2BodyDef
-#external
-type B2ContactFilter
-#external
-type B2ContactManager
-#external
-type B2Island
 #external
 type B2TimeStep
 #external
