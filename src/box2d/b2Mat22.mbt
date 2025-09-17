@@ -34,11 +34,11 @@ pub extern "js" fn B2Mat22::setIdentity(self: B2Mat22) -> Unit =
 pub extern "js" fn B2Mat22::setZero(self: B2Mat22) -> Unit =
   #| self => self.SetZero()
 
-pub extern "js" fn B2Mat22::getAngle(self: B2Mat22) -> Double =
-  #| self => self.GetAngle()
+// pub extern "js" fn B2Mat22::getAngle(self: B2Mat22) -> Double =
+//   #| self => self.GetAngle()
 
-pub extern "js" fn B2Mat22::getInverse(self: B2Mat22, out: B2Mat22) -> B2Mat22 =
-  #| (self, out) => self.GetInverse(out)
+// pub extern "js" fn B2Mat22::getInverse(self: B2Mat22, out: B2Mat22) -> B2Mat22 =
+//   #| (self, out) => self.GetInverse(out)
 
 pub extern "js" fn B2Mat22::solve(self: B2Mat22, out: B2Vec2, bX: Double, bY: Double) -> B2Vec2 =
   #| (self, out, bX, bY) => self.Solve(out, bX, bY)
