@@ -2,6 +2,10 @@
 // Create by Great-Love-League
 // Contact with us if you have any questions.
 
+// math计算类
+pub extern "js" fn b2Math() =
+  #| () => new b2Math()
+
 pub extern "js" fn b2Math_isValid(x: Double) -> Bool =
   #| x => b2Math.b2IsValid(x)
 

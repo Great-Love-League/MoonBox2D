@@ -61,29 +61,29 @@ extern "js" fn B2SpringJointDef::getBase_(self : B2SpringJointDef) -> B2JointDef
   #| self => self
 
 // imply traits
-impl JointDefBase for B2JointDef with getBase(self){
+pub impl JointDefBase for B2JointDef with getBase(self){
   self
 }
 
-impl JointDefBase for B2DistanceJointDef with getBase(self){
+pub impl JointDefBase for B2DistanceJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDefBase for B2GearJointDef with getBase(self){
+pub impl JointDefBase for B2GearJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDefBase for B2MouseJointDef with getBase(self){
+pub impl JointDefBase for B2MouseJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDefBase for B2PrismaticJointDef with getBase(self){
+pub impl JointDefBase for B2PrismaticJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDefBase for B2PulleyJointDef with getBase(self){
+pub impl JointDefBase for B2PulleyJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDefBase for B2RevoluteJointDef with getBase(self){
+pub impl JointDefBase for B2RevoluteJointDef with getBase(self){
   self.getBase_()
 }
-impl JointDefBase for B2SpringJointDef with getBase(self){
+pub impl JointDefBase for B2SpringJointDef with getBase(self){
   self.getBase_()
 }
 

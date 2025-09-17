@@ -38,6 +38,8 @@ type Features
 #external
 type B2BoxDef
 #external
+type B2BoxShape
+#external
 type B2CircleDef
 #external
 type B2CircleShape
@@ -52,9 +54,6 @@ type B2Shape
 #external
 type B2ShapeDef
 
-// common
-#external
-type B2Settings
 // common/math
 #external
 type B2Mat22

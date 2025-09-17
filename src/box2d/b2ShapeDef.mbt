@@ -1,54 +1,183 @@
-// MoonBox2D's b2ShapeDef
-// Create by Great-Love-League
-// Contact with us if you have any questions.
-
 // constructor
 pub extern "js" fn b2ShapeDef() -> B2ShapeDef =
   #| () => new b2ShapeDef()
 
-// functions
-pub extern "js" fn B2ShapeDef::copy(self: B2ShapeDef) -> B2ShapeDef =
-  #| self => self.Copy()
+pub(open) trait ShapeDef{
+  getBase(Self) -> B2ShapeDef;
 
-// get and set
-pub extern "js" fn B2ShapeDef::setType(self: B2ShapeDef, shapeType: Int) -> Unit =
-  #| (self, shapeType) => { self.type = shapeType; }
+  // functions
+  computeMass(Self, massData: B2MassData) -> Unit = _;
+  setLocalPosition(Self, localPosition: B2Vec2) -> Unit = _;
+  getLocalPosition(Self) -> B2Vec2 = _;
+  setLocalRotation(Self, localRotation: Double) -> Unit = _;
+  getLocalRotation(Self) -> Double = _;
+  setFriction(Self, friction: Double) -> Unit = _;
+  getFriction(Self) -> Double = _;
+  setRestitution(Self, restitution: Double) -> Unit = _;
+  getRestitution(Self) -> Double = _;
+  setDensity(Self, density: Double) -> Unit = _;
+  getDensity(Self) -> Double = _;
+  // The collision category bits. Normally you would just set one bit.
+  setCategoryBits(Self, categoryBits: Int) -> Unit = _;
+  getCategoryBits(Self) -> Int = _;
 
-pub extern "js" fn B2ShapeDef::setUserData(self: B2ShapeDef, userData: String) -> Unit =
-  #| (self, userData) => { self.userData = userData; }
+	// The collision mask bits. This states the categories that this
+	// shape would accept for collision.
+  setMaskBits(Self, maskBits: Int) -> Unit = _;
+  getMaskBits(Self) -> Int = _;
 
-pub extern "js" fn B2ShapeDef::setFriction(self: B2ShapeDef, friction: Double) -> Unit =
+  // Collision groups allow a certain group of objects to never collide (negative)
+  // or always collide (positive). Zero means no collision group. Non-zero group
+  // filtering always wins against the mask bits.
+  setGroupIndex(Self, groupIndex: Int) -> Unit = _;
+  getGroupIndex(Self) -> Int = _;
+
+}
+
+// realze ffi function for base type B2ShapeDef
+
+extern "js" fn B2ShapeDef::computeMass_(self: B2ShapeDef, massData: B2MassData) -> Unit =
+  #| (self, massData) => { self.ComputeMass(massData); }
+
+extern "js" fn B2ShapeDef::setLocalPosition_(self: B2ShapeDef, localPosition: B2Vec2) -> Unit =
+  #| (self, localPosition) => { self.localPosition = localPosition; }
+
+extern "js" fn B2ShapeDef::getLocalPosition_(self: B2ShapeDef) -> B2Vec2 =
+  #| self => self.localPosition
+
+extern "js" fn B2ShapeDef::setLocalRotation_(self: B2ShapeDef, localRotation: Double) -> Unit =
+  #| (self, localRotation) => { self.localRotation = localRotation; }
+
+extern "js" fn B2ShapeDef::getLocalRotation_(self: B2ShapeDef) -> Double =
+  #| self => self.localRotation
+
+extern "js" fn B2ShapeDef::setFriction_(self: B2ShapeDef, friction: Double) -> Unit =
   #| (self, friction) => { self.friction = friction; }
 
-pub extern "js" fn B2ShapeDef::setRestitution(self: B2ShapeDef, restitution: Double) -> Unit =
-  #| (self, restitution) => { self.restitution = restitution; }
-
-pub extern "js" fn B2ShapeDef::setDensity(self: B2ShapeDef, density: Double) -> Unit =
-  #| (self, density) => { self.density = density; }
-
-pub extern "js" fn B2ShapeDef::setIsSensor(self: B2ShapeDef, isSensor: Bool) -> Unit =
-  #| (self, isSensor) => { self.isSensor = isSensor; }
-
-pub extern "js" fn B2ShapeDef::setFilter(self: B2ShapeDef, filter: B2CollisionFilter) -> Unit =
-  #| (self, filter) => { self.filter = filter; }
-
-pub extern "js" fn B2ShapeDef::getType(self: B2ShapeDef) -> Int =
-  #| self => self.type
-
-pub extern "js" fn B2ShapeDef::getUserData(self: B2ShapeDef) -> String =
-  #| self => self.userData
-
-pub extern "js" fn B2ShapeDef::getFriction(self: B2ShapeDef) -> Double =
+extern "js" fn B2ShapeDef::getFriction_(self: B2ShapeDef) -> Double =
   #| self => self.friction
 
-pub extern "js" fn B2ShapeDef::getRestitution(self: B2ShapeDef) -> Double =
+extern "js" fn B2ShapeDef::setRestitution_(self: B2ShapeDef, restitution: Double) -> Unit =
+  #| (self, restitution) => { self.restitution = restitution; }
+
+extern "js" fn B2ShapeDef::getRestitution_(self: B2ShapeDef) -> Double =
   #| self => self.restitution
 
-pub extern "js" fn B2ShapeDef::getDensity(self: B2ShapeDef) -> Double =
+extern "js" fn B2ShapeDef::setDensity_(self: B2ShapeDef, density: Double) -> Unit =
+  #| (self, density) => { self.density = density; }
+
+extern "js" fn B2ShapeDef::getDensity_(self: B2ShapeDef) -> Double =
   #| self => self.density
 
-pub extern "js" fn B2ShapeDef::getIsSensor(self: B2ShapeDef) -> Bool =
-  #| self => self.isSensor
+extern "js" fn B2ShapeDef::setCategoryBits_(self: B2ShapeDef, categoryBits: Int) -> Unit =
+  #| (self, categoryBits) => { self.categoryBits = categoryBits; }
 
-pub extern "js" fn B2ShapeDef::getFilter(self: B2ShapeDef) -> B2CollisionFilter =
-  #| self => self.filter
+extern "js" fn B2ShapeDef::getCategoryBits_(self: B2ShapeDef) -> Int =
+  #| self => self.categoryBits
+
+extern "js" fn B2ShapeDef::setMaskBits_(self: B2ShapeDef, maskBits: Int) -> Unit =
+  #| (self, maskBits) => { self.maskBits = maskBits; }
+
+extern "js" fn B2ShapeDef::getMaskBits_(self: B2ShapeDef) -> Int =
+  #| self => self.maskBits
+
+extern "js" fn B2ShapeDef::setGroupIndex_(self: B2ShapeDef, groupIndex: Int) -> Unit =
+  #| (self, groupIndex) => { self.groupIndex = groupIndex; }
+
+extern "js" fn B2ShapeDef::getGroupIndex_(self: B2ShapeDef) -> Int =
+  #| self => self.groupIndex
+
+// getBase part
+
+extern "js" fn B2BoxDef::getBase_(self: B2BoxDef) -> B2ShapeDef =
+  #| self => self
+
+extern "js" fn B2CircleDef::getBase_(self: B2CircleDef) -> B2ShapeDef =
+  #| self => self
+
+extern "js" fn B2PolygonDef::getBase_(self: B2PolygonDef) -> B2ShapeDef =
+  #| self => self
+
+// impl getbase for derived type
+
+pub impl ShapeDef for B2BoxDef with getBase(self){
+  self.getBase_()
+}
+
+pub impl ShapeDef for B2CircleDef with getBase(self){
+  self.getBase_()
+}
+
+pub impl ShapeDef for B2PolygonDef with getBase(self){
+  self.getBase_()
+}
+
+// impl defult for derived type
+
+impl ShapeDef with computeMass(self, massData: B2MassData) -> Unit {
+  self.getBase().computeMass_(massData)
+}
+
+impl ShapeDef with setLocalPosition(self, localPosition: B2Vec2) -> Unit {
+  self.getBase().setLocalPosition_(localPosition)
+}
+
+impl ShapeDef with getLocalPosition(self) -> B2Vec2 {
+  self.getBase().getLocalPosition_()
+}
+
+impl ShapeDef with setLocalRotation(self, localRotation: Double) -> Unit {
+  self.getBase().setLocalRotation_(localRotation)
+}
+
+impl ShapeDef with getLocalRotation(self) -> Double {
+  self.getBase().getLocalRotation_()
+}
+
+impl ShapeDef with setFriction(self, friction: Double) -> Unit {
+  self.getBase().setFriction_(friction)
+}
+
+impl ShapeDef with getFriction(self) -> Double {
+  self.getBase().getFriction_()
+}
+
+impl ShapeDef with setRestitution(self, restitution: Double) -> Unit {
+  self.getBase().setRestitution_(restitution)
+}
+
+impl ShapeDef with getRestitution(self) -> Double {
+  self.getBase().getRestitution_()
+}
+
+impl ShapeDef with setDensity(self, density: Double) -> Unit {
+  self.getBase().setDensity_(density)
+}
+
+impl ShapeDef with getDensity(self) -> Double {
+  self.getBase().getDensity_()
+}
+
+impl ShapeDef with setCategoryBits(self, categoryBits: Int) -> Unit {
+  self.getBase().setCategoryBits_(categoryBits)
+}
+
+impl ShapeDef with getCategoryBits(self) -> Int {
+  self.getBase().getCategoryBits_()
+}
+
+impl ShapeDef with setMaskBits(self, maskBits: Int) -> Unit {
+  self.getBase().setMaskBits_(maskBits)
+}
+
+impl ShapeDef with getMaskBits(self) -> Int {
+  self.getBase().getMaskBits_()
+}
+
+impl ShapeDef with setGroupIndex(self, groupIndex: Int) -> Unit {
+  self.getBase().setGroupIndex_(groupIndex)
+}
+
+impl ShapeDef with getGroupIndex(self) -> Int {
+  self.getBase().getGroupIndex_()
+}

@@ -95,25 +95,25 @@ extern "js" fn B2SpringJoint::getBase_(self : B2SpringJoint) -> B2Joint =
 
 // implymentation of Joint trait for derived joint types
 
-impl JointBase for B2DistanceJoint with getBase(self){
+pub impl JointBase for B2DistanceJoint with getBase(self){
   self.getBase_()
 }
-impl JointBase for B2GearJoint with getBase(self){
+pub impl JointBase for B2GearJoint with getBase(self){
   self.getBase_()
 }
-impl JointBase for B2MouseJoint with getBase(self){
+pub impl JointBase for B2MouseJoint with getBase(self){
   self.getBase_()
 }
-impl JointBase for B2PrismaticJoint with getBase(self){
+pub impl JointBase for B2PrismaticJoint with getBase(self){
   self.getBase_()
 }
-impl JointBase for B2PulleyJoint with getBase(self){
+pub impl JointBase for B2PulleyJoint with getBase(self){
   self.getBase_()
 }
-impl JointBase for B2RevoluteJoint with getBase(self){
+pub impl JointBase for B2RevoluteJoint with getBase(self){
   self.getBase_()
 }
-impl JointBase for B2SpringJoint with getBase(self){
+pub impl JointBase for B2SpringJoint with getBase(self){
   self.getBase_()
 }
 
