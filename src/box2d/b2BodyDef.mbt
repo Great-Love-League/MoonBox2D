@@ -1,7 +1,7 @@
 // box2d/dynamics/b2BodyDef.js
 
 pub extern "js" fn b2BodyDef() -> B2BodyDef =
-  #| new b2BodyDef()
+  #| () => new b2BodyDef()
 
 // setter && getter
 

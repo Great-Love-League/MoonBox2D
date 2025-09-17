@@ -89,23 +89,23 @@ impl JointDefBase for B2SpringJointDef with getBase(self){
 
 // constructor external functions
 pub extern "js" fn b2DistanceJointDef() -> B2DistanceJointDef =
-  #| new b2DistanceJointDef()
+  #| () => new b2DistanceJointDef()
 
 pub extern "js" fn b2GearJointDef() -> B2GearJointDef =
-  #| new b2GearJointDef()
+  #| () => new b2GearJointDef()
 
 pub extern "js" fn b2MouseJointDef() -> B2MouseJointDef =
-  #| new b2MouseJointDef()
+  #| () => new b2MouseJointDef()
 
 pub extern "js" fn b2PrismaticJointDef() -> B2PrismaticJointDef =
-  #| new b2PrismaticJointDef()
+  #| () => new b2PrismaticJointDef()
 
 pub extern "js" fn b2PulleyJointDef() -> B2PulleyJointDef =
-  #| new b2PulleyJointDef()
+  #| () => new b2PulleyJointDef()
 
 pub extern "js" fn b2RevoluteJointDef() -> B2RevoluteJointDef =
-  #| new b2RevoluteJointDef()
+  #| () => new b2RevoluteJointDef()
 
-pub extern "js" fn b2SpringJointDef(a_body1: B2Body, a_body2: B2Body, a_strength: Double) = 
-  #| (a_body1, a_body2, a_strength) => { new b2SpringJointDef(a_body1, a_body2, a_strength); }
+pub extern "js" fn b2SpringJointDef(a_body1: B2Body, a_body2: B2Body, a_strength: Double) =
+  #| (a_body1, a_body2, a_strength) => new b2SpringJointDef(a_body1, a_body2, a_strength)
 

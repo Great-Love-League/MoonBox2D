@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2Distance() -> B2Distance =
-  #| new Box2D.Collision.b2Distance()
+  #| new b2Distance()
 
 // functions
 pub extern "js" fn B2Distance::reset(self: B2Distance) -> Unit =

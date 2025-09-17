@@ -1,7 +1,7 @@
 // box2d/dynamics/b2TimeStep.js
 
 pub extern "js" fn b2TimeStep() -> B2TimeStep =
-  #| new b2TimeStep()
+  #| () => new b2TimeStep()
 
 // setter
 pub extern "js" fn B2TimeStep::setDt(self: B2TimeStep, dt: Double) =

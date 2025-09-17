@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2MassData() -> B2MassData =
-  #| new Box2D.Collision.Shapes.b2MassData()
+  #| () => new b2MassData()
 
 // get and set
 pub extern "js" fn B2MassData::setMass(self: B2MassData, mass: Double) -> Unit =

@@ -2,7 +2,7 @@
 
 
 pub extern "js" fn b2CollisionFilter() -> B2CollisionFilter =
-  #| new b2CollisionFilter()
+  #| () => new b2CollisionFilter()
 
 // 可以手动设置碰撞过滤函数
 // 否则将会使用默认的碰撞过滤函数

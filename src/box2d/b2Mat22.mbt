@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2Mat22() -> B2Mat22 =
-  #| new b2Mat22()
+  #| () => new b2Mat22()
 
 pub extern "js" fn b2Mat22_withAngle(angle: Double) -> B2Mat22 =
   #| angle => new b2Mat22(angle)

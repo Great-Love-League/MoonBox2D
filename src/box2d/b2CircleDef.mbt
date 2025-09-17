@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2CircleDef() -> B2CircleDef =
-  #| new Box2D.Collision.Shapes.b2CircleDef()
+  #| () => {new b2CircleDef()}
 
 // get and set
 pub extern "js" fn B2CircleDef::setLocalPosition(self: B2CircleDef, localPosition: B2Vec2) -> Unit =

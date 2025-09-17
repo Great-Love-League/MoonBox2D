@@ -1,7 +1,7 @@
 // box2d/dynamics/b2WorldListenser.js
 
 pub extern "js" fn b2WorldListener() -> B2WorldListener =
-  #| new b2WorldListener()
+  #| () => new b2WorldListener()
 
 // If a body is destroyed, then any joints attached to it are also destroyed.
 // This prevents memory leaks, but you may unexpectedly be left with an

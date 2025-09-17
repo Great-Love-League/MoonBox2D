@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2PolyDef() -> B2PolygonDef =
-  #| new Box2D.Collision.Shapes.b2PolyDef()
+  #| () => new b2PolyDef()
 
 // functions
 pub extern "js" fn B2PolygonDef::setAsBox(self: B2PolygonDef, hx: Double, hy: Double) -> Unit =

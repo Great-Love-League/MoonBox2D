@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2Manifold() -> B2Manifold =
-  #| new Box2D.Collision.b2Manifold()
+  #| () => new b2Manifold()
 
 // functions
 pub extern "js" fn B2Manifold::reset(self: B2Manifold) -> Unit =

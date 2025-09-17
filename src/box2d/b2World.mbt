@@ -2,7 +2,7 @@
 
 // worldAABB 世界边界
 pub extern "js" fn b2World(worldAABB : B2AABB, gravity: B2Vec2, doSleep: Bool) -> B2World =
-  #| gravity => new b2World(worldAABB, gravity, doSleep)
+  #| (worldAABB, gravity, doSleep) => new b2World(worldAABB, gravity, doSleep)
 
 pub extern "js" fn B2World::setListener(self : B2World, listener: B2WorldListener) =
   #| (self, listener) => { self.SetListener(listener); }

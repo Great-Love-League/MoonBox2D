@@ -4,7 +4,7 @@
 
 // constructor
 pub extern "js" fn b2ShapeDef() -> B2ShapeDef =
-  #| new Box2D.Collision.Shapes.b2ShapeDef()
+  #| () => new b2ShapeDef()
 
 // functions
 pub extern "js" fn B2ShapeDef::copy(self: B2ShapeDef) -> B2ShapeDef =
