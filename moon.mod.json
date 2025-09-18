@@ -1,11 +1,12 @@
 {
-  "name": "lqx/box2d_ffi",
+  "name": "Demonmasterlqx/box2d_ffi",
   "version": "0.1.0",
   "readme": "README.md",
   "repository": "https://github.com/Great-Love-League/MoonBox2D.git",
   "license": "Apache-2.0",
   "keywords": ["Physics Engine"],
-  "description": "",
+  "description": "moonbit ffi box2d",
   "source": "src",
-  "target": "js"
+  "preferred-target": "js",
+  "warn-list": "-2-3"
 }
