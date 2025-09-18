@@ -1,7 +1,7 @@
 {
   "import": [
     {
-      "path": "lqx/box2d_ffi/box2d",
+      "path": "Great-Love-League/box2d_ffi/box2d",
       "alias": "box2d"
     }
   ],
