@@ -181,3 +181,7 @@ impl ShapeDef with setGroupIndex(self, groupIndex: Int) -> Unit {
 impl ShapeDef with getGroupIndex(self) -> Int {
   self.getBase().getGroupIndex_()
 }
+
+pub impl ShapeDef for B2CircleDef
+pub impl ShapeDef for B2BoxDef
+pub impl ShapeDef for B2PolygonDef

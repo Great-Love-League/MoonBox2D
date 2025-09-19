@@ -192,3 +192,11 @@ pub extern "js" fn B2Joint::toGearJoint(self : B2Joint) -> B2GearJoint =
 
 pub extern "js" fn B2Joint::toSpringJoint(self : B2Joint) -> B2SpringJoint =
   #| self => self instanceof b2SpringJoint ? self : null
+
+pub impl Joint for B2DistanceJoint
+pub impl Joint for B2GearJoint
+pub impl Joint for B2MouseJoint
+pub impl Joint for B2PrismaticJoint
+pub impl Joint for B2PulleyJoint
+pub impl Joint for B2RevoluteJoint
+pub impl Joint for B2SpringJoint

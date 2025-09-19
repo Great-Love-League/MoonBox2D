@@ -42,6 +42,12 @@ fn main {
   let world = createWorld()
   let box1 = createBox(world, 0, 500, 20, 20, 1.0)
 
+  let body1 = @box2d.b2BodyDef()
+  let body2 = @box2d.b2BodyDef()
+  let jointDef = @box2d.b2RevoluteJointDef()
+  // jointDef.
+
+
   for i=0 ; i<180 ; i=i+1{
     step(world)
     let pos = box1.getCenterPosition()

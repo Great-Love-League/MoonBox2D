@@ -127,3 +127,7 @@ pub extern "js" fn B2BoxShape::toBoxShape(self: B2BoxShape) -> B2BoxShape =
 
 pub extern "js" fn B2BoxShape::toCircleShape(self: B2BoxShape) -> B2CircleShape =
   #| self => self
+
+pub impl Shape for B2BoxShape
+pub impl Shape for B2CircleShape
+pub impl Shape for B2PolygonShape

@@ -109,3 +109,10 @@ pub extern "js" fn b2RevoluteJointDef() -> B2RevoluteJointDef =
 pub extern "js" fn b2SpringJointDef(a_body1: B2Body, a_body2: B2Body, a_strength: Double) =
   #| (a_body1, a_body2, a_strength) => new b2SpringJointDef(a_body1, a_body2, a_strength)
 
+pub impl JointDef for B2DistanceJointDef
+pub impl JointDef for B2GearJointDef
+pub impl JointDef for B2MouseJointDef
+pub impl JointDef for B2PrismaticJointDef
+pub impl JointDef for B2PulleyJointDef
+pub impl JointDef for B2RevoluteJointDef
+pub impl JointDef for B2SpringJointDef
