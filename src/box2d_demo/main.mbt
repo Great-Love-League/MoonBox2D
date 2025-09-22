@@ -16,9 +16,9 @@ fn createWorld() -> @box2d.B2World {
   worldAABB.setmaxVertex(@box2d.b2Vec2(1000, 1000))
   let gravity = @box2d.b2Vec2(0.0, 10.0)
   let doSleep = true
-  let worlddef = @box2d.b2World(worldAABB, gravity, doSleep)
-  createGround(worlddef) |> ignore
-  return worlddef
+  let world = @box2d.B2World::{world : @box2d.b2World(worldAABB, gravity, doSleep)}
+  createGround(world) |> ignore
+  return world
 }
 
 fn createBox(world : @box2d.B2World, x: Double, y: Double, width: Double, height: Double, density: Double) -> @box2d.B2Body {

@@ -68,7 +68,7 @@ type B2BodyDef
 #external
 type B2TimeStep
 #external
-type B2World
+type B2World_
 #external
 type B2WorldListener
 
