@@ -75,6 +75,9 @@ pub extern "js" fn B2Body::allowSleeping(self : B2Body, flag: Bool) =
 pub extern "js" fn B2Body::wakeUp(self : B2Body) =
   #| self => { self.WakeUp(); }
 
+pub extern "js" fn B2Body::isEqual(self : B2Body, other: B2Body) -> Bool =
+  #| (self, other) => self === other
+
 // Get the list of all shapes attached to this body. 
 // 在原本函数中是返回一个列表的头指针，这里做出修改，直接返回一个 shape的数组
 pub extern "js" fn B2Body::getShapeList(self : B2Body) -> FixedArray[B2Shape] =
