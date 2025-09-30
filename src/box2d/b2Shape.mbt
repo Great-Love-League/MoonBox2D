@@ -2,12 +2,12 @@
 // Create by Great-Love-League
 // Contact with us if you have any questions.
 
-enum B2ShapeType{
+pub(all) enum B2ShapeType{
   UnknownShape // -1 && others
   CircleShape // 0
   PolygonShape // 1
   BoxShape // 2
-}
+} derive(Eq, Hash, Show)
 
 // functions
 
@@ -127,13 +127,13 @@ impl Shape with resetProxy(self: Self, broadPhase: B2BroadPhase) -> Unit {
 
 // 转换
 
-pub extern "js" fn B2BoxShape::toPolygonShape(self: B2BoxShape) -> B2PolygonShape =
+pub extern "js" fn B2Shape::toPolygonShape(self: B2Shape) -> B2PolygonShape =
   #| self => self
 
-pub extern "js" fn B2BoxShape::toBoxShape(self: B2BoxShape) -> B2BoxShape =
+pub extern "js" fn B2Shape::toBoxShape(self: B2Shape) -> B2BoxShape =
   #| self => self
 
-pub extern "js" fn B2BoxShape::toCircleShape(self: B2BoxShape) -> B2CircleShape =
+pub extern "js" fn B2Shape::toCircleShape(self: B2Shape) -> B2CircleShape =
   #| self => self
 
 pub impl Shape for B2BoxShape
