@@ -4,7 +4,7 @@ pub extern "js" fn b2BoxDef() -> B2BoxDef =
   #| () => new b2BoxDef()
 
 pub extern "js" fn b2CircleDef() -> B2CircleDef =
-  #| () => {new b2CircleDef()}
+  #| () => new b2CircleDef()
 
 pub extern "js" fn b2PolyDef() -> B2PolygonDef =
   #| () => new b2PolyDef()
