@@ -150,17 +150,26 @@ extern "js" fn B2World_::getContactList_(self : B2World_) -> FixedArray[B2Contac
   #| }
 
 
+// contact listener
+
+// 检测
+// pub(all) struct B2B2BContactListener{
+//   body1 : B2Body
+//   body2 : B2Body
+//   callback : () -> Unit
+// }
+
+// pub(all) struct 
+
 // world extend functions
 
-pub struct B2World{
+pub(all) struct B2World{
   world: B2World_
+  // contactListeners : Array[B2ContactListener]
 }
 
 pub impl World for B2World with getBase(self){
   self.world
 }
 
-pub impl World for B2World with step(self, dt, iterations){
-  self.getBase().step_(dt, iterations)
-}
 pub impl World for B2World

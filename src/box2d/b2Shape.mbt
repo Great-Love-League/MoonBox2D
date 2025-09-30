@@ -23,7 +23,11 @@ pub(open) trait Shape{
   getRotationMatrix(Self) -> B2Mat22 = _;
   getNext(Self) -> B2Shape = _;
   resetProxy(Self, broadPhase: B2BroadPhase) -> Unit = _;
+  isEqual(Self, other: Self) -> Bool = _;
 }
+
+extern "js" fn B2Shape::isEqual_(self: B2Shape, other: B2Shape) -> Bool =
+  #| (self, other) => self === other
 
 // realze ffi function for base type B2Shape
 extern "js" fn B2Shape::testPoint_(self: B2Shape, p: B2Vec2) -> Bool =
@@ -80,6 +84,10 @@ pub impl Shape for B2BoxShape with getBase(self: B2BoxShape) {
 
 impl Shape with testPoint(self: Self, p: B2Vec2) -> Bool {
   self.getBase().testPoint_(p)
+}
+
+impl Shape with isEqual(self: Self, other: Self) -> Bool {
+  self.getBase().isEqual_(other.getBase())
 }
 
 impl Shape with getType(self: Self) -> B2ShapeType {

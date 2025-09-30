@@ -7,13 +7,13 @@ pub extern "js" fn B2CircleShape::getLocalPosition(self : B2CircleShape) -> B2Ve
   #| self => self.m_localPosition
 
 pub extern "js" fn B2PolygonShape::getVertexCount(self : B2PolygonShape) -> Int =
-  #| self => self.m_count
+  #| self => self.m_vertexCount
 
 // 返回一个包含所有顶点的数组，拷贝每个顶点
 pub extern "js" fn B2PolygonShape::getVertices(self : B2PolygonShape) -> FixedArray[B2Vec2] =
   #| self => {
   #|   let vertices = [];
-  #|   for (let i = 0; i < self.m_count; i++) {
+  #|   for (let i = 0; i < self.m_vertexCount; i++) {
   #|     vertices.push(self.m_vertices[i].Copy());
   #|   }
   #|   return vertices;
