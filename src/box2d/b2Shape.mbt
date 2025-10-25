@@ -24,6 +24,8 @@ pub(open) trait Shape{
   getNext(Self) -> B2Shape = _;
   resetProxy(Self, broadPhase: B2BroadPhase) -> Unit = _;
   isEqual(Self, other: Self) -> Bool = _;
+  getFriction(Self) -> Double = _;
+  getRestitution(Self) -> Double = _;
 }
 
 extern "js" fn B2Shape::isEqual_(self: B2Shape, other: B2Shape) -> Bool =
@@ -50,6 +52,12 @@ extern "js" fn B2Shape::getNext_(self: B2Shape) -> B2Shape =
 
 extern "js" fn B2Shape::resetProxy_(self: B2Shape, broadPhase: B2BroadPhase) -> Unit =
   #| (self, broadPhase) => { self.ResetProxy(broadPhase); }
+
+extern "js" fn B2Shape::getFriction_(self: B2Shape) -> Double =
+  #| self => self.m_friction;
+
+extern "js" fn B2Shape::getRestitution_(self: B2Shape) -> Double =
+  #| self => self.m_restitution;
 
 // impl getbase_ for derived type
 
@@ -123,6 +131,14 @@ impl Shape with getNext(self: Self) -> B2Shape {
 
 impl Shape with resetProxy(self: Self, broadPhase: B2BroadPhase) -> Unit {
   self.getBase().resetProxy_(broadPhase)
+}
+
+impl Shape with getFriction(self: Self) -> Double {
+  self.getBase().getFriction_()
+}
+
+impl Shape with getRestitution(self: Self) -> Double {
+  self.getBase().getRestitution_()
 }
 
 // 转换
