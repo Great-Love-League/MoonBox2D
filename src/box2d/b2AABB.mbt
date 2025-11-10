@@ -15,3 +15,9 @@ pub extern "js" fn B2AABB::setminVertex(self: B2AABB, v: B2Vec2) =
 
 pub extern "js" fn B2AABB::setmaxVertex(self: B2AABB, v: B2Vec2) =
   #| (self, v) => { self.maxVertex.Set(v.x, v.y); }
+
+pub extern "js" fn B2AABB::getminVertex(self: B2AABB) -> B2Vec2 =
+  #| self => self.minVertex
+
+pub extern "js" fn B2AABB::getmaxVertex(self: B2AABB) -> B2Vec2 =
+  #| self => self.maxVertex
