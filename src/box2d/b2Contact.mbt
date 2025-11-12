@@ -14,9 +14,10 @@ pub extern "js" fn B2Contact::getManifoldCount(self : B2Contact) -> Int =
   #| self => self.GetManifoldCount()
 
 pub extern "js" fn B2Contact::getManifolds(self : B2Contact) -> FixedArray[B2Manifold] =
-  #| self => {
+  #| (self) => {
   #|   let folds = self.GetManifolds();
-  #|   if (count == null) {
+  #|   if (folds == null) {
   #|     return [];
   #|   }
   #|   return folds;
+  #|}
