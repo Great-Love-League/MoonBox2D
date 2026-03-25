@@ -1,5 +1,6 @@
 // box2d/dynamics/b2WorldListenser.js
 
+///|
 pub extern "js" fn b2WorldListener() -> B2WorldListener =
   #| () => new b2WorldListener()
 
@@ -11,11 +12,21 @@ pub extern "js" fn b2WorldListener() -> B2WorldListener =
 // Implement this abstract class and provide it to b2World via
 // b2World::SetListener().
 // DO NOT modify the Box2D world inside this callback.
-pub extern "js" fn B2WorldListener::setNotifyJointDestroyed(self : B2WorldListener, notify_function: (B2Joint) -> Unit) = 
+
+///|
+pub extern "js" fn B2WorldListener::setNotifyJointDestroyed(
+  self : B2WorldListener,
+  notify_function : (B2Joint) -> Unit,
+) =
   #| (self, notify_function) => { self.NotifyJointDestroyed = notify_function; }
 
 // This is called when a body's shape passes outside of the world boundary. If you
 // override this and pass back e_destroyBody, you must nullify your copies of the
 // body pointer.
-pub extern "js" fn B2WorldListener::setNotifyBoundaryViolated(self : B2WorldListener, notify_function: (B2Body) -> Int) = 
+
+///|
+pub extern "js" fn B2WorldListener::setNotifyBoundaryViolated(
+  self : B2WorldListener,
+  notify_function : (B2Body) -> Int,
+) =
   #| (self, notify_function) => { self.NotifyBoundaryViolated = notify_function; }

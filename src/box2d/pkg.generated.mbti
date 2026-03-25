@@ -1,0 +1,654 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "Demonmasterlqx/box2d_ffi/box2d"
+
+// Values
+pub fn b2AABB() -> B2AABB
+
+pub fn b2BodyDef() -> B2BodyDef
+
+pub fn b2Bound() -> B2Bound
+
+pub fn b2BoundValues() -> B2BoundValues
+
+pub fn b2BoxDef() -> B2BoxDef
+
+pub fn b2BroadPhase(B2AABB, B2PairCallback) -> B2BroadPhase
+
+pub fn b2BufferedPair() -> B2BufferedPair
+
+pub fn b2CircleDef() -> B2CircleDef
+
+pub fn b2Collision() -> B2Collision
+
+pub fn b2CollisionFilter() -> B2CollisionFilter
+
+pub fn b2ContactID() -> B2ContactID
+
+pub fn b2ContactPoint() -> B2ContactPoint
+
+pub fn b2Distance() -> B2Distance
+
+pub fn b2DistanceJoint(B2DistanceJointDef) -> B2DistanceJoint
+
+pub fn b2DistanceJointDef() -> B2DistanceJointDef
+
+pub fn b2Distance_getGJKIterations() -> Int
+
+pub fn b2GearJoint(B2GearJointDef) -> B2GearJoint
+
+pub fn b2GearJointDef() -> B2GearJointDef
+
+pub fn b2Manifold() -> B2Manifold
+
+pub fn b2MassData() -> B2MassData
+
+pub fn b2Mat22() -> B2Mat22
+
+pub fn b2Mat22_withAngle(Double) -> B2Mat22
+
+pub fn b2Mat22_withVectors(B2Vec2, B2Vec2) -> B2Mat22
+
+pub fn b2Math_abs(Double) -> Double
+
+pub fn b2Math_absM(B2Mat22) -> B2Mat22
+
+pub fn b2Math_absV(B2Vec2) -> B2Vec2
+
+pub fn b2Math_addMM(B2Mat22, B2Mat22) -> B2Mat22
+
+pub fn b2Math_addVV(B2Vec2, B2Vec2) -> B2Vec2
+
+pub fn b2Math_clamp(Double, Double, Double) -> Double
+
+pub fn b2Math_clampV(B2Vec2, B2Vec2, B2Vec2) -> B2Vec2
+
+pub fn b2Math_crossFV(Double, B2Vec2) -> B2Vec2
+
+pub fn b2Math_crossVF(B2Vec2, Double) -> B2Vec2
+
+pub fn b2Math_crossVV(B2Vec2, B2Vec2) -> Double
+
+pub fn b2Math_dot(B2Vec2, B2Vec2) -> Double
+
+pub fn b2Math_isValid(Double) -> Bool
+
+pub fn b2Math_max(Double, Double) -> Double
+
+pub fn b2Math_maxV(B2Vec2, B2Vec2) -> B2Vec2
+
+pub fn b2Math_min(Double, Double) -> Double
+
+pub fn b2Math_minV(B2Vec2, B2Vec2) -> B2Vec2
+
+pub fn b2Math_mulMV(B2Mat22, B2Vec2) -> B2Vec2
+
+pub fn b2Math_mulTMV(B2Mat22, B2Vec2) -> B2Vec2
+
+pub fn b2Math_multiplyFV(Double, B2Vec2) -> B2Vec2
+
+pub fn b2Math_multiplyMM(B2Mat22, B2Mat22) -> B2Mat22
+
+pub fn b2Math_multiplyTMM(B2Mat22, B2Mat22) -> B2Mat22
+
+pub fn b2Math_random() -> Double
+
+pub fn b2Math_randomRange(Double, Double) -> Double
+
+pub fn b2Math_subtractVV(B2Vec2, B2Vec2) -> B2Vec2
+
+pub fn b2Math_swap(B2Vec2, B2Vec2) -> Unit
+
+pub fn b2MouseJoint(B2MouseJointDef) -> B2MouseJoint
+
+pub fn b2MouseJointDef() -> B2MouseJointDef
+
+pub fn b2OBB() -> B2OBB
+
+pub fn b2PolyDef() -> B2PolygonDef
+
+pub fn b2PrismaticJoint(B2PrismaticJointDef) -> B2PrismaticJoint
+
+pub fn b2PrismaticJointDef() -> B2PrismaticJointDef
+
+pub fn b2PulleyJoint(B2PulleyJointDef) -> B2PulleyJoint
+
+pub fn b2PulleyJointDef() -> B2PulleyJointDef
+
+pub fn b2RevoluteJoint(B2RevoluteJointDef) -> B2RevoluteJoint
+
+pub fn b2RevoluteJointDef() -> B2RevoluteJointDef
+
+pub fn b2Settings_USHRT_MAX() -> Int
+
+pub fn b2Settings_b2_angularSleepTolerance() -> Double
+
+pub fn b2Settings_b2_angularSlop() -> Double
+
+pub fn b2Settings_b2_contactBaumgarte() -> Double
+
+pub fn b2Settings_b2_lengthUnitsPerMeter() -> Double
+
+pub fn b2Settings_b2_linearSleepTolerance() -> Double
+
+pub fn b2Settings_b2_linearSlop() -> Double
+
+pub fn b2Settings_b2_massUnitsPerKilogram() -> Double
+
+pub fn b2Settings_b2_maxAngularCorrection() -> Double
+
+pub fn b2Settings_b2_maxLinearCorrection() -> Double
+
+pub fn b2Settings_b2_maxManifoldPoints() -> Int
+
+pub fn b2Settings_b2_maxPairs() -> Int
+
+pub fn b2Settings_b2_maxPolyVertices() -> Int
+
+pub fn b2Settings_b2_maxProxies() -> Int
+
+pub fn b2Settings_b2_maxShapesPerBody() -> Int
+
+pub fn b2Settings_b2_pi() -> Double
+
+pub fn b2Settings_b2_timeToSleep() -> Double
+
+pub fn b2Settings_b2_timeUnitsPerSecond() -> Double
+
+pub fn b2Settings_b2_velocityThreshold() -> Double
+
+pub fn b2Settings_set_b2_maxPolyVertices(Int) -> Unit
+
+pub fn b2ShapeDef() -> B2ShapeDef
+
+pub fn b2SpringJoint(B2SpringJointDef) -> B2SpringJoint
+
+pub fn b2SpringJointDef(B2Body, B2Body, Double) -> Unit
+
+pub fn b2TimeStep() -> B2TimeStep
+
+pub fn b2Vec2(Double, Double) -> B2Vec2
+
+pub fn b2World(B2AABB, B2Vec2, Bool) -> B2World_
+
+pub fn b2WorldListener() -> B2WorldListener
+
+// Errors
+
+// Types and methods
+type B2AABB
+pub fn B2AABB::isValid(Self) -> Bool
+pub fn B2AABB::setmaxVertex(Self, B2Vec2) -> Unit
+pub fn B2AABB::setminVertex(Self, B2Vec2) -> Unit
+
+type B2Body
+pub fn B2Body::allowSleeping(Self, Bool) -> Unit
+pub fn B2Body::applyForce(Self, B2Vec2, B2Vec2) -> Unit
+pub fn B2Body::applyImpulse(Self, B2Vec2, B2Vec2) -> Unit
+pub fn B2Body::applyTorque(Self, Double) -> Unit
+pub fn B2Body::destory(Self) -> Unit
+pub fn B2Body::getAngularVelocity(Self) -> Double
+pub fn B2Body::getCenterPosition(Self) -> B2Vec2
+pub fn B2Body::getInertia(Self) -> Double
+pub fn B2Body::getJointList(Self) -> FixedArray[B2Joint]
+pub fn B2Body::getLinearVelocity(Self) -> B2Vec2
+pub fn B2Body::getLocalPoint(Self, B2Vec2) -> B2Vec2
+pub fn B2Body::getLocalVector(Self, B2Vec2) -> B2Vec2
+pub fn B2Body::getMass(Self) -> Double
+pub fn B2Body::getNext(Self) -> Self
+pub fn B2Body::getOriginPosition(Self) -> B2Vec2
+pub fn B2Body::getRotation(Self) -> Double
+pub fn B2Body::getRotationMatrix(Self) -> B2Mat22
+pub fn B2Body::getShapeList(Self) -> FixedArray[B2Shape]
+pub fn B2Body::getWorldPoint(Self, B2Vec2) -> B2Vec2
+pub fn B2Body::getWorldVector(Self, B2Vec2) -> B2Vec2
+pub fn B2Body::isEqual(Self, Self) -> Bool
+pub fn B2Body::isFrozen(Self) -> Bool
+pub fn B2Body::isSleeping(Self) -> Bool
+pub fn B2Body::isStatic(Self) -> Bool
+pub fn B2Body::setAngularVelocity(Self, Double) -> Unit
+pub fn B2Body::setCenterPosition(Self, B2Vec2, Double) -> Unit
+pub fn B2Body::setLinearVelocity(Self, B2Vec2) -> Unit
+pub fn B2Body::setOriginPosition(Self, B2Vec2, Double) -> Unit
+pub fn B2Body::wakeUp(Self) -> Unit
+
+type B2BodyDef
+pub fn B2BodyDef::addShape(Self, B2ShapeDef) -> Unit
+pub fn B2BodyDef::getAllowSleep(Self) -> Bool
+pub fn B2BodyDef::getAngularDamping(Self) -> Double
+pub fn B2BodyDef::getAngularVelocity(Self) -> Double
+pub fn B2BodyDef::getIsSleeping(Self) -> Bool
+pub fn B2BodyDef::getLinearDamping(Self) -> Double
+pub fn B2BodyDef::getLinearVelocity(Self) -> B2Vec2
+pub fn B2BodyDef::getPosition(Self) -> B2Vec2
+pub fn B2BodyDef::getPreventRotation(Self) -> Bool
+pub fn B2BodyDef::getRotation(Self) -> Double
+pub fn B2BodyDef::setAllowSleep(Self, Bool) -> Unit
+pub fn B2BodyDef::setAngularDamping(Self, Double) -> Unit
+pub fn B2BodyDef::setAngularVelocity(Self, Double) -> Unit
+pub fn B2BodyDef::setIsSleeping(Self, Bool) -> Unit
+pub fn B2BodyDef::setLinearDamping(Self, Double) -> Unit
+pub fn B2BodyDef::setLinearVelocity(Self, B2Vec2) -> Unit
+pub fn B2BodyDef::setPosition(Self, B2Vec2) -> Unit
+pub fn B2BodyDef::setPreventRotation(Self, Bool) -> Unit
+pub fn B2BodyDef::setRotation(Self, Double) -> Unit
+
+type B2Bound
+pub fn B2Bound::isLower(Self) -> Bool
+pub fn B2Bound::isUpper(Self) -> Bool
+pub fn B2Bound::swap(Self, Self) -> Unit
+
+type B2BoundValues
+pub fn B2BoundValues::getlowerValues(Self) -> Array[Int]
+pub fn B2BoundValues::getupperValues(Self) -> Array[Int]
+
+type B2BoxDef
+pub fn B2BoxDef::getExtents(Self) -> B2Vec2
+pub fn B2BoxDef::setExtents(Self, B2Vec2) -> Unit
+pub impl ShapeDef for B2BoxDef
+
+type B2BoxShape
+pub impl Shape for B2BoxShape
+
+type B2BroadPhase
+pub fn B2BroadPhase::commit(Self) -> Unit
+pub fn B2BroadPhase::computeBounds(Self, B2Vec2, B2Vec2, B2AABB) -> Unit
+pub fn B2BroadPhase::createProxy(Self, B2AABB) -> Int
+pub fn B2BroadPhase::destroyProxy(Self, Int) -> Unit
+pub fn B2BroadPhase::getProxy(Self, Int) -> B2Proxy?
+pub fn B2BroadPhase::inRange(Self, B2AABB) -> Bool
+pub fn B2BroadPhase::moveProxy(Self, Int, B2AABB) -> Unit
+pub fn B2BroadPhase::query(Self, B2Vec2, B2Vec2, Int, Int, Array[B2Bound], Int, Int) -> Unit
+pub fn B2BroadPhase::queryAABB(Self, B2AABB, Int) -> Int
+pub fn B2BroadPhase::testOverlap(Self, B2Proxy, B2Proxy) -> Bool
+pub fn B2BroadPhase::testOverlapValidate(Self, B2Proxy, B2Proxy) -> Bool
+pub fn B2BroadPhase::validate(Self) -> Bool
+
+type B2BufferedPair
+
+type B2CircleContact
+
+type B2CircleDef
+pub fn B2CircleDef::getRadius(Self) -> Double
+pub fn B2CircleDef::setRadius(Self, Double) -> Unit
+pub impl ShapeDef for B2CircleDef
+
+type B2CircleShape
+pub fn B2CircleShape::getLocalPosition(Self) -> B2Vec2
+pub fn B2CircleShape::getRadius(Self) -> Double
+pub impl Shape for B2CircleShape
+
+type B2Collision
+
+type B2CollisionFilter
+pub fn B2CollisionFilter::setShouldCollide(Self, (B2Shape, B2Shape) -> Bool) -> Unit
+
+type B2Conservative
+
+type B2Contact
+pub fn B2Contact::getManifoldCount(Self) -> Int
+pub fn B2Contact::getManifolds(Self) -> FixedArray[B2Manifold]
+pub fn B2Contact::getShape1(Self) -> B2Shape
+pub fn B2Contact::getShape2(Self) -> B2Shape
+
+type B2ContactConstraint
+
+type B2ContactConstraintPoint
+
+type B2ContactID
+pub fn B2ContactID::copy(Self) -> Self
+pub fn B2ContactID::get_key(Self) -> Int
+pub fn B2ContactID::set(Self, Int) -> Unit
+
+type B2ContactNode
+
+type B2ContactPoint
+pub fn B2ContactPoint::getId(Self) -> B2ContactID
+pub fn B2ContactPoint::getNormalImpulse(Self) -> Double
+pub fn B2ContactPoint::getPosition(Self) -> B2Vec2
+pub fn B2ContactPoint::getSeparation(Self) -> Double
+pub fn B2ContactPoint::getTangentImpulse(Self) -> Double
+pub fn B2ContactPoint::setId(Self, B2ContactID) -> Unit
+pub fn B2ContactPoint::setNormalImpulse(Self, Double) -> Unit
+pub fn B2ContactPoint::setPosition(Self, B2Vec2) -> Unit
+pub fn B2ContactPoint::setSeparation(Self, Double) -> Unit
+pub fn B2ContactPoint::setTangentImpulse(Self, Double) -> Unit
+
+type B2ContactRegister
+
+type B2ContactSolver
+
+type B2Distance
+pub fn B2Distance::distance(Self, B2Vec2, B2Vec2, B2Shape, B2Shape) -> Double
+pub fn B2Distance::processThree(Self, B2Vec2, B2Vec2, Array[B2Vec2], Array[B2Vec2], Array[B2Vec2]) -> Int
+pub fn B2Distance::processTwo(Self, B2Vec2, B2Vec2, Array[B2Vec2], Array[B2Vec2], Array[B2Vec2]) -> Int
+
+type B2DistanceJoint
+pub impl Joint for B2DistanceJoint
+pub impl JointBase for B2DistanceJoint
+
+type B2DistanceJointDef
+pub fn B2DistanceJointDef::setAnchorPoint1(Self, B2Vec2) -> Unit
+pub fn B2DistanceJointDef::setAnchorPoint2(Self, B2Vec2) -> Unit
+pub impl JointDef for B2DistanceJointDef
+pub impl JointDefBase for B2DistanceJointDef
+
+type B2GearJoint
+pub impl Joint for B2GearJoint
+pub impl JointBase for B2GearJoint
+
+type B2GearJointDef
+pub fn B2GearJointDef::getRatio(Self) -> Double
+pub impl JointDef for B2GearJointDef
+pub impl JointDefBase for B2GearJointDef
+
+type B2Jacobian
+
+type B2Joint
+pub fn B2Joint::toDistanceJoint(Self) -> B2DistanceJoint
+pub fn B2Joint::toGearJoint(Self) -> B2GearJoint
+pub fn B2Joint::toMouseJoint(Self) -> B2MouseJoint
+pub fn B2Joint::toPrismaticJoint(Self) -> B2PrismaticJoint
+pub fn B2Joint::toPulleyJoint(Self) -> B2PulleyJoint
+pub fn B2Joint::toRevoluteJoint(Self) -> B2RevoluteJoint
+pub fn B2Joint::toSpringJoint(Self) -> B2SpringJoint
+
+type B2JointDef
+pub impl JointDefBase for B2JointDef
+
+type B2JointNode
+
+type B2JointType
+
+type B2Manifold
+pub fn B2Manifold::getNormal(Self) -> B2Vec2
+pub fn B2Manifold::getPointCount(Self) -> Int
+pub fn B2Manifold::getPoints(Self) -> Array[B2ContactPoint]
+pub fn B2Manifold::reset(Self) -> Unit
+pub fn B2Manifold::set(Self, Self) -> Unit
+pub fn B2Manifold::setNormal(Self, B2Vec2) -> Unit
+pub fn B2Manifold::setPointCount(Self, Int) -> Unit
+pub fn B2Manifold::setPoints(Self, Array[B2ContactPoint]) -> Unit
+
+type B2MassData
+pub fn B2MassData::getCenter(Self) -> B2Vec2
+pub fn B2MassData::getI(Self) -> Double
+pub fn B2MassData::getMass(Self) -> Double
+pub fn B2MassData::setCenter(Self, B2Vec2) -> Unit
+pub fn B2MassData::setI(Self, Double) -> Unit
+pub fn B2MassData::setMass(Self, Double) -> Unit
+
+type B2Mat22
+pub fn B2Mat22::abs(Self) -> Unit
+pub fn B2Mat22::addM(Self, Self) -> Unit
+pub fn B2Mat22::copy(Self) -> Self
+pub fn B2Mat22::getCol1(Self) -> B2Vec2
+pub fn B2Mat22::getCol2(Self) -> B2Vec2
+pub fn B2Mat22::invert(Self) -> Unit
+pub fn B2Mat22::set(Self, Double) -> Unit
+pub fn B2Mat22::setCol1(Self, B2Vec2) -> Unit
+pub fn B2Mat22::setCol2(Self, B2Vec2) -> Unit
+pub fn B2Mat22::setIdentity(Self) -> Unit
+pub fn B2Mat22::setM(Self, Self) -> Unit
+pub fn B2Mat22::setVV(Self, B2Vec2, B2Vec2) -> Unit
+pub fn B2Mat22::setZero(Self) -> Unit
+pub fn B2Mat22::solve(Self, B2Vec2, Double, Double) -> B2Vec2
+
+type B2MouseJoint
+pub impl Joint for B2MouseJoint
+pub impl JointBase for B2MouseJoint
+
+type B2MouseJointDef
+pub fn B2MouseJointDef::setDampingRatio(Self, Double) -> Unit
+pub fn B2MouseJointDef::setFrequencyHz(Self, Double) -> Unit
+pub fn B2MouseJointDef::setMaxForce(Self, Double) -> Unit
+pub fn B2MouseJointDef::setTarget(Self, B2Vec2) -> Unit
+pub fn B2MouseJointDef::setTimeStep(Self, Double) -> Unit
+pub impl JointDef for B2MouseJointDef
+pub impl JointDefBase for B2MouseJointDef
+
+type B2NullContact
+
+type B2OBB
+pub fn B2OBB::getCenter(Self) -> B2Vec2
+pub fn B2OBB::getExtents(Self) -> B2Vec2
+pub fn B2OBB::getR(Self) -> B2Mat22
+pub fn B2OBB::setCenter(Self, B2Vec2) -> Unit
+pub fn B2OBB::setExtents(Self, B2Vec2) -> Unit
+pub fn B2OBB::setR(Self, B2Mat22) -> Unit
+
+type B2Pair
+
+type B2PairCallback
+
+type B2PairManager
+
+type B2PloyContact
+
+type B2PolyAndCircleContact
+
+type B2PolygonDef
+pub fn B2PolygonDef::getVertexCount(Self) -> Int
+pub fn B2PolygonDef::getVertices(Self) -> Array[B2Vec2]
+pub fn B2PolygonDef::setVertices(Self, Array[B2Vec2]) -> Unit
+pub impl ShapeDef for B2PolygonDef
+
+type B2PolygonShape
+pub fn B2PolygonShape::getLocalOBB(Self) -> B2OBB
+pub fn B2PolygonShape::getVertexCount(Self) -> Int
+pub fn B2PolygonShape::getVertices(Self) -> FixedArray[B2Vec2]
+pub impl Shape for B2PolygonShape
+
+type B2PrismaticJoint
+pub fn B2PrismaticJoint::getJointSpeed(Self) -> Double
+pub fn B2PrismaticJoint::getMotorForce(Self, Double) -> Double
+pub fn B2PrismaticJoint::setMotorForce(Self, Double) -> Unit
+pub fn B2PrismaticJoint::setMotorSpeed(Self, Double) -> Unit
+pub impl Joint for B2PrismaticJoint
+pub impl JointBase for B2PrismaticJoint
+
+type B2PrismaticJointDef
+pub fn B2PrismaticJointDef::setAnchorPoint(Self, B2Vec2) -> Unit
+pub fn B2PrismaticJointDef::setAxis(Self, B2Vec2) -> Unit
+pub fn B2PrismaticJointDef::setEnableLimit(Self, Bool) -> Unit
+pub fn B2PrismaticJointDef::setEnableMotor(Self, Bool) -> Unit
+pub fn B2PrismaticJointDef::setLowerTranslation(Self, Double) -> Unit
+pub fn B2PrismaticJointDef::setMotorForce(Self, Double) -> Unit
+pub fn B2PrismaticJointDef::setMotorSpeed(Self, Double) -> Unit
+pub fn B2PrismaticJointDef::setUpperTranslation(Self, Double) -> Unit
+pub impl JointDef for B2PrismaticJointDef
+pub impl JointDefBase for B2PrismaticJointDef
+
+type B2Proxy
+
+type B2PulleyJoint
+pub fn B2PulleyJoint::getGroundPoint1(Self) -> B2Vec2
+pub fn B2PulleyJoint::getGroundPoint2(Self) -> B2Vec2
+pub fn B2PulleyJoint::getLength1(Self) -> Double
+pub fn B2PulleyJoint::getLength2(Self) -> Double
+pub fn B2PulleyJoint::getRatio(Self) -> Double
+pub impl Joint for B2PulleyJoint
+pub impl JointBase for B2PulleyJoint
+
+type B2PulleyJointDef
+pub fn B2PulleyJointDef::setAnchorPoint1(Self, B2Vec2) -> Unit
+pub fn B2PulleyJointDef::setAnchorPoint2(Self, B2Vec2) -> Unit
+pub fn B2PulleyJointDef::setGroundPoint1(Self, B2Vec2) -> Unit
+pub fn B2PulleyJointDef::setGroundPoint2(Self, B2Vec2) -> Unit
+pub fn B2PulleyJointDef::setMaxLength1(Self, Double) -> Unit
+pub fn B2PulleyJointDef::setMaxLength2(Self, Double) -> Unit
+pub fn B2PulleyJointDef::setRatio(Self, Double) -> Unit
+pub impl JointDef for B2PulleyJointDef
+pub impl JointDefBase for B2PulleyJointDef
+
+type B2RevoluteJoint
+pub fn B2RevoluteJoint::getJointAngle(Self) -> Double
+pub fn B2RevoluteJoint::getJointSpeed(Self) -> Double
+pub fn B2RevoluteJoint::getMotorTorque(Self, Double) -> Double
+pub fn B2RevoluteJoint::setMotorSpeed(Self, Double) -> Unit
+pub fn B2RevoluteJoint::setMotorTorque(Self, Double) -> Unit
+pub impl Joint for B2RevoluteJoint
+pub impl JointBase for B2RevoluteJoint
+
+type B2RevoluteJointDef
+pub fn B2RevoluteJointDef::setAnchorPoint(Self, B2Vec2) -> Unit
+pub fn B2RevoluteJointDef::setEnableLimit(Self, Bool) -> Unit
+pub fn B2RevoluteJointDef::setEnableMotor(Self, Bool) -> Unit
+pub fn B2RevoluteJointDef::setLowerAngle(Self, Double) -> Unit
+pub fn B2RevoluteJointDef::setMotorSpeed(Self, Double) -> Unit
+pub fn B2RevoluteJointDef::setMotorTorque(Self, Double) -> Unit
+pub fn B2RevoluteJointDef::setUpperAngle(Self, Double) -> Unit
+pub impl JointDef for B2RevoluteJointDef
+pub impl JointDefBase for B2RevoluteJointDef
+
+type B2Shape
+pub fn B2Shape::toBoxShape(Self) -> B2BoxShape
+pub fn B2Shape::toCircleShape(Self) -> B2CircleShape
+pub fn B2Shape::toPolygonShape(Self) -> B2PolygonShape
+pub impl Shape for B2Shape
+
+type B2ShapeDef
+
+pub(all) enum B2ShapeType {
+  UnknownShape
+  CircleShape
+  PolygonShape
+  BoxShape
+} derive(Eq, Hash, Show)
+
+type B2SpringJoint
+pub impl Joint for B2SpringJoint
+pub impl JointBase for B2SpringJoint
+
+type B2SpringJointDef
+pub fn B2SpringJointDef::setAnchorPoint1(Self, B2Vec2) -> Unit
+pub fn B2SpringJointDef::setAnchorPoint2(Self, B2Vec2) -> Unit
+pub fn B2SpringJointDef::setStrength(Self, Double) -> Unit
+pub impl JointDef for B2SpringJointDef
+pub impl JointDefBase for B2SpringJointDef
+
+type B2TimeStep
+pub fn B2TimeStep::getDt(Self) -> Double
+pub fn B2TimeStep::getInvDt(Self) -> Double
+pub fn B2TimeStep::getIterations(Self) -> Int
+pub fn B2TimeStep::setDt(Self, Double) -> Unit
+pub fn B2TimeStep::setInvDt(Self, Double) -> Unit
+pub fn B2TimeStep::setIterations(Self, Int) -> Unit
+
+type B2Vec2
+pub fn B2Vec2::abs(Self) -> Unit
+pub fn B2Vec2::add(Self, Self) -> Unit
+pub fn B2Vec2::copy(Self) -> Self
+pub fn B2Vec2::crossFV(Self, Double) -> Unit
+pub fn B2Vec2::crossVF(Self, Double) -> Unit
+pub fn B2Vec2::getX(Self) -> Double
+pub fn B2Vec2::getY(Self) -> Double
+pub fn B2Vec2::isValid(Self) -> Bool
+pub fn B2Vec2::length(Self) -> Double
+pub fn B2Vec2::maxV(Self, Self) -> Unit
+pub fn B2Vec2::minV(Self, Self) -> Unit
+pub fn B2Vec2::mulM(Self, B2Mat22) -> Unit
+pub fn B2Vec2::mulTM(Self, B2Mat22) -> Unit
+pub fn B2Vec2::multiply(Self, Double) -> Unit
+pub fn B2Vec2::negative(Self) -> Self
+pub fn B2Vec2::normalize(Self) -> Double
+pub fn B2Vec2::set(Self, Double, Double) -> Unit
+pub fn B2Vec2::setV(Self, Self) -> Unit
+pub fn B2Vec2::setX(Self, Double) -> Unit
+pub fn B2Vec2::setY(Self, Double) -> Unit
+pub fn B2Vec2::setZero(Self) -> Unit
+pub fn B2Vec2::subtract(Self, Self) -> Unit
+
+pub(all) struct B2World {
+  world : B2World_
+}
+pub impl World for B2World
+
+type B2WorldListener
+pub fn B2WorldListener::setNotifyBoundaryViolated(Self, (B2Body) -> Int) -> Unit
+pub fn B2WorldListener::setNotifyJointDestroyed(Self, (B2Joint) -> Unit) -> Unit
+
+type B2World_
+pub impl World for B2World_
+
+type ClipVertex
+
+type Features
+
+// Type aliases
+
+// Traits
+pub(open) trait Joint : JointBase {
+  getAnchor1(Self) -> B2Vec2 = _
+  getAnchor2(Self) -> B2Vec2 = _
+  getBody1(Self) -> B2Body = _
+  getBody2(Self) -> B2Body = _
+  getNext(Self) -> B2Joint = _
+  getReactionForce(Self, Double) -> B2Vec2 = _
+  getReactionTorque(Self, Double) -> Double = _
+  getType(Self) -> B2JointType = _
+}
+
+pub trait JointBase {
+  getBase(Self) -> B2Joint
+}
+
+pub(open) trait JointDef : JointDefBase {
+  setBody1(Self, B2Body) -> Unit = _
+  setBody2(Self, B2Body) -> Unit = _
+  setCollideConnected(Self, Bool) -> Unit = _
+}
+
+pub trait JointDefBase {
+  getBase(Self) -> B2JointDef
+}
+
+pub(open) trait Shape {
+  getBase(Self) -> B2Shape
+  testPoint(Self, B2Vec2) -> Bool = _
+  getType(Self) -> B2ShapeType = _
+  getBody(Self) -> B2Body = _
+  getPosition(Self) -> B2Vec2 = _
+  getRotationMatrix(Self) -> B2Mat22 = _
+  getNext(Self) -> B2Shape = _
+  resetProxy(Self, B2BroadPhase) -> Unit = _
+  isEqual(Self, Self) -> Bool = _
+}
+
+pub(open) trait ShapeDef {
+  getBase(Self) -> B2ShapeDef
+  computeMass(Self, B2MassData) -> Unit = _
+  setLocalPosition(Self, B2Vec2) -> Unit = _
+  getLocalPosition(Self) -> B2Vec2 = _
+  setLocalRotation(Self, Double) -> Unit = _
+  getLocalRotation(Self) -> Double = _
+  setFriction(Self, Double) -> Unit = _
+  getFriction(Self) -> Double = _
+  setRestitution(Self, Double) -> Unit = _
+  getRestitution(Self) -> Double = _
+  setDensity(Self, Double) -> Unit = _
+  getDensity(Self) -> Double = _
+  setCategoryBits(Self, Int) -> Unit = _
+  getCategoryBits(Self) -> Int = _
+  setMaskBits(Self, Int) -> Unit = _
+  getMaskBits(Self) -> Int = _
+  setGroupIndex(Self, Int) -> Unit = _
+  getGroupIndex(Self) -> Int = _
+}
+
+pub(open) trait World {
+  getBase(Self) -> B2World_
+  setListener(Self, B2WorldListener) -> Unit = _
+  setFilter(Self, B2CollisionFilter) -> Unit = _
+  createBody(Self, B2BodyDef) -> B2Body = _
+  destroyBody(Self, B2Body) -> Unit = _
+  clearBodyList(Self) -> Unit = _
+  createJoint(Self, B2JointDef) -> B2Joint = _
+  destroyJoint(Self, B2Joint) -> Unit = _
+  getGroundBody(Self) -> B2Body = _
+  step(Self, Double, Int) -> Unit = _
+  query(Self, B2AABB, FixedArray[B2Shape], Int) -> Int = _
+  getBodyList(Self) -> FixedArray[B2Body] = _
+  getJointList(Self) -> FixedArray[B2Joint] = _
+  getContactList(Self) -> FixedArray[B2Contact] = _
+}
+
