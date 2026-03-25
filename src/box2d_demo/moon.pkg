@@ -1,0 +1,7 @@
+import {
+  "Demonmasterlqx/box2d_ffi/box2d" @box2d,
+}
+
+options(
+  "is-main": true,
+)

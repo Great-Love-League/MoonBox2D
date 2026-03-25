@@ -1,8 +1,15 @@
-pub extern "js" fn getlowerValues(self : B2BoundValues) -> Array[Int] = 
+///|
+pub extern "js" fn B2BoundValues::getlowerValues(
+  self : B2BoundValues,
+) -> Array[Int] =
   #| (self) => self.lowerValues
 
-pub extern "js" fn getupperValues(self : B2BoundValues) -> Array[Int] = 
+///|
+pub extern "js" fn B2BoundValues::getupperValues(
+  self : B2BoundValues,
+) -> Array[Int] =
   #| (self) => self.upperValues
 
+///|
 pub extern "js" fn b2BoundValues() -> B2BoundValues =
   #| () => new B2BoundValue()
