@@ -29,7 +29,7 @@ pub extern "js" fn B2CircleDef::getRadius(self: B2CircleDef) -> Double =
 //B2PolygonDef
 
 // 有截断 b2Settings.b2_maxProxies
-pub extern "js" fn B2PolygonDef::setVertices(self: B2PolygonDef, vertices: Array[B2Vec2]) -> Unit =
+pub extern "js" fn B2PolygonDef::setVertices_ffi(self: B2PolygonDef, vertices: FixedArray[B2Vec2]) -> Unit =
   #| (self, vertices) => { 
   #|  self.vertexCount = vertices.length;
   #|  for (let i = 0; i < min(b2Settings.b2_maxProxies, self.vertexCount); i++) {
@@ -38,8 +38,16 @@ pub extern "js" fn B2PolygonDef::setVertices(self: B2PolygonDef, vertices: Array
   #|  self.vertexCount = min(b2Settings.b2_maxProxies, self.vertexCount);
   #| }
 
-pub extern "js" fn B2PolygonDef::getVertices(self: B2PolygonDef) -> Array[B2Vec2] =
+pub fn B2PolygonDef::setVertices(self: B2PolygonDef, vertices: Array[B2Vec2]) -> Unit {
+  B2PolygonDef::setVertices_ffi(self, FixedArray::from_array(vertices))
+}
+
+pub extern "js" fn B2PolygonDef::getVertices_ffi(self: B2PolygonDef) -> FixedArray[B2Vec2] =
   #| self => self.vertices
+
+pub fn B2PolygonDef::getVertices(self: B2PolygonDef) -> Array[B2Vec2] {
+  Array::from_fixed_array(B2PolygonDef::getVertices_ffi(self))
+}
 
 pub extern "js" fn B2PolygonDef::getVertexCount(self: B2PolygonDef) -> Int =
   #| self => self.vertexCount
