@@ -34,5 +34,10 @@ pub extern "js" fn B2BroadPhase::testOverlapValidate(self : B2BroadPhase, p1 : B
 pub extern "js" fn B2BroadPhase::testOverlap(self : B2BroadPhase, b : B2Proxy, p : B2Proxy) -> Bool =
   #| (self, b, p) -> self.TestOverlap(b, p)
 
-pub extern "js" fn B2BroadPhase::query(self : B2BroadPhase, lowerQueryOut : B2Vec2, upperQueryOut : B2Vec2, lowerValue : Int, upperValue : Int, bound : Array[B2Bound], boundCount : Int, axis : Int) -> Unit =
+pub extern "js" fn B2BroadPhase::query_ffi(self : B2BroadPhase, lowerQueryOut : B2Vec2, upperQueryOut : B2Vec2, lowerValue : Int, upperValue : Int, bound : FixedArray[B2Bound], boundCount : Int, axis : Int) -> Unit =
   #| (self, lowerQueryOut, upperQueryOut, lowerValue, upperValue, bound, boundCount, axis) => { self.Query(lowerQueryOut, upperQueryOut, lowerValue, upperValue, bound, boundCount, axis); }
+
+pub fn B2BroadPhase::query(self : B2BroadPhase, lowerQueryOut : B2Vec2, upperQueryOut : B2Vec2, lowerValue : Int, upperValue : Int, bound : Array[B2Bound], boundCount : Int, axis : Int) -> Unit {
+  B2BroadPhase::query_ffi(self, lowerQueryOut, upperQueryOut, lowerValue, upperValue, FixedArray::from_array(bound), boundCount, axis)
+}
+

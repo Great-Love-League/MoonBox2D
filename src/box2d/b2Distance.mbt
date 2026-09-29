@@ -13,25 +13,47 @@ pub extern "js" fn B2Distance::distance(
 ) -> Double =
   #| (self, p1Out, p2Out, shape1, shape2) => self.Distance(p1Out, p2Out, shape1, shape2)
 
-pub extern "js" fn B2Distance::processTwo(
+pub extern "js" fn B2Distance::processTwo_ffi(
   self: B2Distance,
   p1Out: B2Vec2,
   p2Out: B2Vec2,
-  p1s: Array[B2Vec2],
-  p2s: Array[B2Vec2],
-  points: Array[B2Vec2]
+  p1s: FixedArray[B2Vec2],
+  p2s: FixedArray[B2Vec2],
+  points: FixedArray[B2Vec2]
 ) -> Int =
   #| (self, p1Out, p2Out, p1s, p2s, points) => self.ProcessTwo(p1Out, p2Out, p1s, p2s, points)
 
-pub extern "js" fn B2Distance::processThree(
+pub fn B2Distance::processTwo(
   self: B2Distance,
   p1Out: B2Vec2,
   p2Out: B2Vec2,
   p1s: Array[B2Vec2],
   p2s: Array[B2Vec2],
   points: Array[B2Vec2]
+) -> Int {
+  B2Distance::processTwo_ffi(self, p1Out, p2Out, FixedArray::from_array(p1s), FixedArray::from_array(p2s), FixedArray::from_array(points))
+}
+
+pub extern "js" fn B2Distance::processThree_ffi(
+  self: B2Distance,
+  p1Out: B2Vec2,
+  p2Out: B2Vec2,
+  p1s: FixedArray[B2Vec2],
+  p2s: FixedArray[B2Vec2],
+  points: FixedArray[B2Vec2]
 ) -> Int =
   #| (self, p1Out, p2Out, p1s, p2s, points) => self.ProcessThree(p1Out, p2Out, p1s, p2s, points)
+
+pub fn B2Distance::processThree(
+  self: B2Distance,
+  p1Out: B2Vec2,
+  p2Out: B2Vec2,
+  p1s: Array[B2Vec2],
+  p2s: Array[B2Vec2],
+  points: Array[B2Vec2]
+) -> Int {
+  B2Distance::processThree_ffi(self, p1Out, p2Out, FixedArray::from_array(p1s), FixedArray::from_array(p2s), FixedArray::from_array(points))
+}
 
 pub extern "js" fn b2Distance_getGJKIterations() -> Int =
   #| () => b2Distance.g_GJK_Iterations
